@@ -63,7 +63,7 @@ test('Unique locators', async ({ page }) => {
     await expect(page.getByPlaceholder('unique-placeholder-string')).toHaveAttribute('id', 'input-by-placeholder');
 });
 
-test.only('XPath text verification at each level', async ({ page }) => {
+test('XPath text verification at each level', async ({ page }) => {
     await page.goto('https://qaplayground.vercel.app/');
 
     await expect(page.locator("(//ul[@id='level-1']/li[@data-level='1'])[1]")).toContainText('Level 1 — Item A');
