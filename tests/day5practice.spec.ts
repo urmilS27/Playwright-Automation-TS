@@ -70,5 +70,5 @@ test.only('Multi Tabs', async ({ browser }) => {
     
 
     //for user one tata cliq drop dowm handling
-    //for user two tat cliq kitchen radio button and iframe
+    //for user two tata cliq kitchen radio button and iframe
 })
