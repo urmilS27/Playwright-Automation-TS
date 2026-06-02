@@ -65,10 +65,10 @@ test.only('Multi Tabs', async ({ browser }) => {
     await pagetwo.locator('#userEmail').fill('anshika@gmail.com ');
     await pagetwo.locator('#userPassword').fill('Iamking@000');
     await pagetwo.locator('#login').click();
-
-    
-
-
     await u1.close();
     await u2.close();
+    
+
+    //for user one tata cliq drop dowm handling
+    //for user two tat cliq kitchen radio button and iframe
 })
