@@ -48,7 +48,7 @@ test('model', async ({ page }) => {
     await expect(page.locator('#modal-output')).toHaveText('Modal closed');
 })
 
-test.only('Multi Tabs', async ({ browser }) => {
+test('Multi Tabs', async ({ browser }) => {
     const u1 = await browser.newContext();
     const u2 = await browser.newContext();
 
