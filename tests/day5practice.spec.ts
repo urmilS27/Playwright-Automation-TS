@@ -71,7 +71,7 @@ test('Multi Tabs', async ({ browser }) => {
 
 })
 
-test.only('fill fields inside iframe', async ({ page }) => {
+test('fill fields inside iframe', async ({ page }) => {
   await page.goto('https://qaplayground.vercel.app/');
 
   const iframe = page.frameLocator('iframe');
