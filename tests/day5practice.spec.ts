@@ -69,6 +69,17 @@ test('Multi Tabs', async ({ browser }) => {
     await u2.close();
     
 
-    //for user one tata cliq drop dowm handling
-    //for user two tata cliq kitchen radio button and iframe
 })
+
+test.only('fill fields inside iframe', async ({ page }) => {
+  await page.goto('https://qaplayground.vercel.app/');
+
+  const iframe = page.frameLocator('iframe');
+
+  await iframe.getByPlaceholder('Type inside iframe...').fill('Urmil');
+  await iframe.getByPlaceholder('email@inside-iframe.com').fill('urmil@test.com');
+
+  await expect(iframe.getByPlaceholder('Type inside iframe...')).toHaveValue('Urmil');
+  await expect(iframe.getByPlaceholder('email@inside-iframe.com')).toHaveValue('urmil@test.com');
+});
+
