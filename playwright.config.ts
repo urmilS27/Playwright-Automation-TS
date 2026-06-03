@@ -30,8 +30,17 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     // headless : false,
-    screenshot : 'on' ,
+    screenshot : 'only-on-failure',
+    video : 'retain-on-failure',
     trace: 'on-first-retry',
+    browserName:'chromium',
+    launchOptions:{
+      args:[
+         '--disable-http2',
+        '--no-sandbox',
+        '--disable-dev-shm-usage'
+      ]
+    }
   },
 
   /* Configure projects for major browsers */

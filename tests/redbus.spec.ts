@@ -24,9 +24,15 @@ test('RedBus - Ahmedabad to Surat with Maximum Actions', async ({ page }) => {
   await page.locator('.searchButtonWrapper___1c1fc9').click();
   await page.waitForLoadState('domcontentloaded');
  
-  await page.locator('[role="checkbox"] li').filter({ hasText: /^AC/ }).click();
-  await page.locator('.filterTitle___7cb35f').filter({ hasText: 'Dropping points' }).scrollIntoViewIfNeeded();
-  await page.locator('.filterTitle___7cb35f').filter({ hasText: 'Dropping points' }).click();
+  await page.locator('[role="checkbox"] li')
+    .filter({ hasText: /^AC/ })
+    .click();
+  await page.locator('.filterTitle___7cb35f')
+    .filter({ hasText: 'Dropping points' })
+    .scrollIntoViewIfNeeded();
+  await page.locator('.filterTitle___7cb35f')
+    .filter({ hasText: 'Dropping points' })
+    .click();
  
 //   await page.getByRole('checkbox', { name: 'Barodda Pristage (4)' }).isChecked();
 //   await page.locator('.tupleWrapper___c5ee06 undefined').filter({ hasText: 'Dropping points' }).click();
@@ -34,7 +40,9 @@ test('RedBus - Ahmedabad to Surat with Maximum Actions', async ({ page }) => {
   await page.getByRole('button', { name: 'Mangalmurti Travels(MAHAKAL), Bharat Benz A/C Sleeper (2+1). Departs 23:05,' }).click();
   await page.getByLabel('Seat number A, lower deck,').click();
   await page.getByLabel('Select boarding & dropping').click();
+  
   await page.getByLabel(':05 Adalaj,Trimandir').click();
   await page.getByLabel('05:05, 21 Jun Sarthana').click();
   await page.getByLabel('Continue booking, Amount ₹900').click();
+
 });

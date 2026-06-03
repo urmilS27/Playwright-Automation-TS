@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
  
 test('TataCliq - Men Kurta Search, Filter, Wishlist, Close Popup', async ({ page }) => {
  
-  await page.goto('https://www.tatacliq.com/');
+  await page.goto('https://www.tatacliq.com/', {timeout:  90000} );
  
   // await expect(page.locator('title')).toContainText('Tata CLiQ');
   // await expect(page.getByRole('heading').first()).toContainText('Tata');
