@@ -1,9 +1,3 @@
-#Files
-demo.spec.ts
-practice.spec.ts
-tatacliq2.locators.spec.ts
-codegenenhance.spec.ts
-.gitignore
 
 # =========================
 # Dependencies
@@ -40,17 +34,6 @@ tmp/
 temp/
 .cache/
 
-generated/
-generated-tests/
-generated-reports/
-generated-specs/
-generated-output/
-
-# AI intermediate outputs
-ai-output/
-agent-output/
-execution-output/
-
 # =========================
 # Reports
 # =========================
@@ -61,16 +44,7 @@ allure-report/
 junit-report/
 mochawesome-report/
 
-# =========================
-# Environment / Secrets
-# =========================
-.env
-.env.*
-!.env.example
 
-secrets/
-keys/
-credentials/
 
 # API/Auth secrets
 *.pem
@@ -86,11 +60,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# =========================
-# OS Files
-# =========================
-.DS_Store
-Thumbs.db
 
 # =========================
 # IDE / Editor
@@ -107,21 +76,18 @@ yarn.lock
 pnpm-lock.yaml
 
 # =========================
-# CI/CD Secrets
-# =========================
-.github/*.local
-.gitlab/*.local
-.github/agents
-
-# =========================
-# Misc
-# =========================
-*.zip
-*.tar
-*.gz
 
 # Playwright
 
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+
+#Files
+demo.spec.ts
+practice.spec.ts
+tatacliq2.locators.spec.ts
+codegenenhance.spec.ts
+demowebsite.spec.ts
+assertions.spec.ts
