@@ -1,24 +1,50 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
  
-test('TataCliq timeout error', async ({ page }) => {
+test("Date Picker Event", async ({ page }) => {
+  await page.goto("https://www.abhibus.com/");
  
-  await page.goto('https://www.tatacliq.com/', {timeout:  180000 });
+  const fromInput = page.getByPlaceholder("Leaving From");
+  await fromInput.click();
+  await fromInput.fill("Ahmedabad");
+  await page.getByText("Ahmedabad", { exact: true }).first().click();
  
-  await expect(page).toHaveTitle(/Tata CLiQ/i);
+  const toInput = page.getByPlaceholder("Going To");
+  await toInput.click();
+  await toInput.fill("Mumbai");
+  await page.getByText("Mumbai", { exact: true }).first().click();
  
-  const popup = page.getByRole('button', { name: 'No, Thanks' });
-  if (await popup.isVisible()) await popup.click();
-  await page.locator('#search-text-input').click();
-  await page.locator('#search-text-input').fill('men kurta');
-  await page.locator('.SearchResultItem__base').first().waitFor({ state: 'visible' });
-  await page.locator('.SearchResultItem__base').first().click();
-  await page.locator('.FilterDesktop__newFilCheckboxBlock').filter({ hasText: 'Kurta' }).nth(1).waitFor({ state: 'visible' });
-  await page.locator('.FilterDesktop__newFilCheckboxBlock').filter({ hasText: 'Kurta' }).nth(1).click();
-  await page.locator('.PlpComponent__base').nth(1).waitFor({ state: 'visible' });
-  await page.locator('.PlpComponent__base').nth(1).locator('.ProductModule__electronicViewButtonNew4By4').locator('[role="button"]').click();
+  await page.getByPlaceholder("Onward Journey Date").click();
  
-  await page.getByTitle('Close').waitFor({ state: 'visible' });
-  await page.getByTitle('Close').click();
+  await page.getByRole("button", {name : "11" }).click();
  
+  await page.locator("#search-container").getByRole("button", { name: "Search" }).click();
+ 
+  await page.waitForTimeout(3000);
 });
+
+test("Multiple page Handler", async ({ browser }) => {
  
+    const context = await browser.newContext();
+    const page =await context.newPage();
+ 
+    await page.goto("https://www.geeksforgeeks.org/reactjs/next-js-playwright-testing/");
+ 
+    const pagePromise = context.waitForEvent("page");
+    await page.locator(`li[value="1"] a`).click();
+    const newPage = await pagePromise;
+ 
+    await newPage.waitForLoadState();
+    await newPage.locator('#ArticlePageMoreInfoNextArticleComponent_bottomCommentButton__O9Jyw').click();
+ 
+    const feedBackField = newPage.frameLocator('iframe#gfg_post_1107997_ifr').locator(`html`).locator(".mce-content-body ");
+    await feedBackField.fill("Well explaination");
+    await newPage.locator('.submit_btn').click();
+    await newPage.close();
+ 
+    await page.locator('#ArticlePageMoreInfoNextArticleComponent_bottomCommentButton__O9Jyw').click();
+    const feedBackField_2 = page.frameLocator('iframe#gfg_post_1284674_ifr').locator(`html`).locator(".mce-content-body ");
+    await feedBackField_2.fill("Well explaination");
+    await page.locator('.submit_btn').click();
+ 
+    await page.waitForTimeout(2000);
+});
