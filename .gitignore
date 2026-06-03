@@ -1,9 +1,14 @@
+#Files
+demo.spec.ts
+practice.spec.ts
+tatacliq2.locators.spec.ts
+codegenenhance.spec.ts
+.gitignore
+
 # =========================
 # Dependencies
 # =========================
 node_modules/
-codegenenhance.spec.ts
-
 # =========================
 # Build / Output
 # =========================
@@ -11,7 +16,6 @@ dist/
 build/
 out/
 coverage/
-
 # =========================
 # Playwright
 # =========================
