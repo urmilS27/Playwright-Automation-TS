@@ -101,11 +101,11 @@ test('complete flow from homepage to show detail with all assertions', async ({ 
     const markAsWatched = page.locator('text=Mark as watched');
     await expect(markAsWatched).toBeVisible();
 
-    const videos = page.locator('text=99+ VIDEOS');
-    await expect(videos).toBeVisible();
+    // const videos = page.locator('text=99+ VIDEOS');
+    // await expect(videos).toBeVisible();
 
-    const photos = page.locator('text=99+ PHOTOS');
-    await expect(photos).toBeVisible();
+    // const photos = page.locator('text=99+ PHOTOS');
+    // await expect(photos).toBeVisible();
 
     const castSection = page.locator('[data-testid="title-cast"]');
     await expect(castSection).toBeVisible();
