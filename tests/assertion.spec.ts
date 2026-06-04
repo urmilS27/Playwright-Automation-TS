@@ -2,10 +2,12 @@ import { test, expect } from '@playwright/test';
 
 test('Ycombinator', async ({ page }) => {
     await page.goto('https://www.ycombinator.com/')
+    await expect(page).toHaveTitle(/Y Combinator/)
 })
 
 test('imdb', async ({ page }) => {
     await page.goto('https://www.imdb.com/')
+    await expect(page).toHaveTitle(/IMDb/);
 })
 
 test('complete flow from homepage to show detail with all assertions', async ({ page }) => {
