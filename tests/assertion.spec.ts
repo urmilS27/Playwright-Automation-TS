@@ -5,11 +5,6 @@ test('Ycombinator', async ({ page }) => {
     await expect(page).toHaveTitle(/Y Combinator/)
 })
 
-test('imdb', async ({ page }) => {
-    await page.goto('https://www.imdb.com/')
-    await expect(page).toHaveTitle(/IMDb/);
-})
-
 test('complete flow from homepage to show detail with all assertions', async ({ page }) => {
 
     await page.goto('https://www.imdb.com');
