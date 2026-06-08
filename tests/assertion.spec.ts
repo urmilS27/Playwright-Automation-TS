@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 
+ 
 test('Ycombinator', async ({ page }) => {
     await page.goto('https://www.ycombinator.com/')
     await expect(page).toHaveTitle(/Y Combinator/)
@@ -7,7 +8,7 @@ test('Ycombinator', async ({ page }) => {
 
 test('complete flow from homepage to show detail with all assertions', async ({ page }) => {
 
-    await page.goto('https://www.imdb.com');
+    await page.goto('https://www.imdb.com', { timeout: 30000 });
 
     const title = page.locator('h1[data-testid="hero__pageTitle"]');
     await expect(page).toHaveTitle(/IMDb/);
