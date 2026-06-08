@@ -31,5 +31,10 @@
     "@playwright/test": "^1.60.0",
     "@types/node": "^25.9.1",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2",
+    "install": "^0.13.0"
   }
 }
