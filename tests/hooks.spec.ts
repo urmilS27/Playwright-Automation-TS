@@ -2,6 +2,11 @@ import { test, expect } from '@playwright/test';
 
 test.describe('IMDb - Search to Title Detail Flow', () => {
 
+  test.beforeAll(async () => {
+    console.log('Starting IMDb test suite');
+  });
+
+
   test.beforeEach(async ({ page }) => {
     await page.goto('https://www.imdb.com/');
     await expect(page).toHaveTitle(/IMDb/);
@@ -80,4 +85,7 @@ test.describe('IMDb - Search to Title Detail Flow', () => {
     await expect(page.locator('[data-testid="title-cast"]')).toBeVisible();
   });
 
+  test.afterAll('Completed test suits', async () =>{
+    console.log('Execution Completed');
+  })
 });
