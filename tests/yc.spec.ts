@@ -17,7 +17,7 @@ test('Search company',async ({ page }) => {
     
 })
 
-test.only('Filter companies', async ({ page }) => {
+test('Filter companies', async ({ page }) => {
 
     const yctest = new companiesPage( page );
     const ycomapnies = new companyDetails( page );
