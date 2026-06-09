@@ -20,13 +20,10 @@ export class companiesPage{
     async Baseurl(){
         await this.page.goto('https://www.ycombinator.com/', {timeout : 30000});
     }
-
     async userlogin(){
         await this.login.click();
         await this.username.fill('urmil3727');
         await this.password.fill('URMILsakariya5329@#@')
         await this.submitbtn.click();
     }
-
-   
 }

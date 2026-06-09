@@ -27,7 +27,6 @@ export class companyDetails{
         this.dropdownsel=page.locator('select')
     }
 
-
     async navComp(){
         await this.companies.click()
     }
