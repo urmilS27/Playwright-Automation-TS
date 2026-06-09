@@ -1,0 +1,13 @@
+{
+
+    "filters2":{
+        "batchfilter" : "Summer 202613",
+        "industryfilter": "b2b6",
+        "hqfilter": "Remote"
+    },
+    "filters":{
+        "batchfilter" : "All batches",
+        "industryfilter": "fintech",
+        "hqfilter": "Remote"
+    }
+}
