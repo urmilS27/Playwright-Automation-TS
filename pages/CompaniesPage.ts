@@ -18,7 +18,7 @@ export class companiesPage{
     }
 
     async Baseurl(){
-        await this.page.goto('https://www.ycombinator.com/', {timeout : 30000});
+        await this.page.goto('https://www.ycombinator.com/', {timeout : 50000});
     }
     async userlogin(){
         await this.login.click();
@@ -27,3 +27,4 @@ export class companiesPage{
         await this.submitbtn.click();
     }
 }
+
