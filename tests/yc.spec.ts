@@ -32,7 +32,7 @@ test('Filter companies', async ({ page }) => {
 
 // Flow 2
 
-test.only('Startup Companies', async ({ page }) => {
+test('Startup Companies', async ({ page }) => {
     const yjob = new comapnyCheckout(page);
     const yctest = new companiesPage( page ); 
     await yctest.Baseurl();
