@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { companiesPage } from '../pages/CompaniesPage';
 import { companyDetails } from '../pages/SearchCompany';
 import { comapnyCheckout } from '../pages/JobPage';
+import { JobApply } from '../pages/JobApplyPage';
 
 test('Search company',async ({ page }) => {
      
@@ -32,33 +33,39 @@ test('Filter companies', async ({ page }) => {
 
 // Flow 2
 
-test('Startup Companies', async ({ page }) => {
+test.only('Startup Companies', async ({ page }) => {
+    
     const yjob = new comapnyCheckout(page);
-    const yctest = new companiesPage( page ); 
+    const yctest = new companiesPage(page);
+
     await yctest.Baseurl();
     await yctest.userlogin();
+
     await yjob.joblinkpage();
-    await page.waitForLoadState('domcontentloaded')
-    await yjob.selectcompanies();
-    // await page.pause();
+    await page.waitForLoadState('domcontentloaded');
 
-    const newPagePromise = page.waitForEvent('popup');
-    const newPage = await newPagePromise;
+    await yjob.clearFilterC();
 
-    await newPage.waitForLoadState('domcontentloaded');
+    await yjob.searchComp();
+    await page.waitForLoadState('domcontentloaded');
 
-    const companyTab = new comapnyCheckout(newPage);
+    const companyPagePromise = page.waitForEvent('popup');
+    await yjob.selectRole.first().click();
 
-    await companyTab.applynow();
+    const companyPage = await companyPagePromise;
+    await companyPage.waitForLoadState('domcontentloaded');
 
-    await newPage
-        .getByPlaceholder(
-            "Hi! My name is Urmil Sakariya and here's a little bit about me and what I'm looking for..."
-        )
-        .fill("Urmil Sakariya");
+    const companyTab = new comapnyCheckout(companyPage);
 
-    await newPage.pause();
+    const jobPagePromise = companyPage.waitForEvent('popup');
+    await companyTab.viewRoleDetail.click();
 
-    await newPage.getByRole('button', { name: 'Close' }).click();
+    const jobPage = await jobPagePromise;
+    await jobPage.waitForLoadState('domcontentloaded');
 
+    const jobApply = new JobApply(jobPage);
+
+    await jobApply.applynow();
+    await jobApply.jobDesc();
+    await jobApply.close();
 })
