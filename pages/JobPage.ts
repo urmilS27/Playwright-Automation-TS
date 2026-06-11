@@ -44,6 +44,8 @@ export class comapnyCheckout{
         //used when we want to locate with alt text of image or by the image
         await this.selectRole.first().click();
         await this.viewRoleDetail.click();
+
+        // 
     }
 
 }
