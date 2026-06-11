@@ -17,7 +17,7 @@ export class comapnyCheckout{
         this.selectcontainer=page.locator('.bg-beige-lighter.mb-5.rounded.pb-0')
         // this.viewjob=page.getByRole('link', { name: 'Staff Software Engineer', exact: true})
         this.applybtn=page.getByText('Apply', { exact: true })
-        this.selectRole=page.getByRole('link', { name: 'Software Engineer' })
+        this.selectRole=page.getByRole('link', { name: 'Backend Engineer (India)' })
     }
     async joblinkpage(){
         await this.jobslink.click();
