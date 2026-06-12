@@ -23,7 +23,7 @@ traces/
 # Playwright generated auth/session files
 playwright/.auth/
 storageState.json
-auth.json
+# auth.json
 
 # =========================
 # MCP Runtime / AI Outputs
