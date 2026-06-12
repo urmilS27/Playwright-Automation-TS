@@ -11,7 +11,7 @@ test('Search company',async ({ page }) => {
     const ycomapnies = new companyDetails( page );
 
     await yctest.Baseurl();
-    // await yctest.userlogin();
+    await yctest.userlogin();
     await ycomapnies.navComp();
     await ycomapnies.search("open AI");
     // await page.pause();
@@ -40,7 +40,7 @@ test('Startup Companies', async ({ page }) => {
     const yctest = new companiesPage(page);
 
     await yctest.Baseurl();
-    // await yctest.userlogin();
+    await yctest.userlogin();
     await yjob.joblinkpage();
     await page.waitForLoadState('domcontentloaded');
     await yjob.clearFilterC();
