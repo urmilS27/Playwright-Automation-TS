@@ -67,7 +67,7 @@ test('Startup Companies', async ({ page }) => {
 
 })
 
-test.only('Startup Companies Flow with Filters', async ({ page }) => {
+test('Startup Companies Flow with Filters', async ({ page }) => {
 
     const yjob = new comapnyCheckout(page);
     const yctest = new companiesPage(page);
