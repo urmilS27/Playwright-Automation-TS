@@ -41,12 +41,9 @@ test('Startup Companies', async ({ page }) => {
 
     await yctest.Baseurl();
     // await yctest.userlogin();
-
     await yjob.joblinkpage();
     await page.waitForLoadState('domcontentloaded');
-
     await yjob.clearFilterC();
-
     await yjob.searchComp();
     await page.waitForLoadState('domcontentloaded');
 
@@ -75,10 +72,8 @@ test('Startup Companies Flow with Filters', async ({ page }) => {
 
     await yctest.Baseurl();
     // await yctest.userlogin();
-
     await yjob.joblinkpage();
     await page.waitForLoadState('domcontentloaded');
-
     await yjob.clearFilterC();
 
     // await filters.selectCommitment('Full-time');
@@ -92,7 +87,6 @@ test('Startup Companies Flow with Filters', async ({ page }) => {
     await filters.selectCompanyStage('Seed');
     await filters.enableInterviewProcess();
 
-    
     await yjob.clearFilterC();
     await yjob.searchComp();
     await page.waitForLoadState('domcontentloaded');
