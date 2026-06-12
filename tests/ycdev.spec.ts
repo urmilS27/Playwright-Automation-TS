@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { companiesPage } from '../pages/CompaniesPage';
 import { companyDetails } from '../pages/SearchCompany';
-import { comapnyCheckout } from '../pages/JobPage';
-import { JobApply } from '../pages/JobApplyPage';
+import { comapnyCheckout } from '../pages/Jobpage';
+import { JobApply } from '../pages/JobApplypage';
 
 test('Search company',async ({ page }) => {
      
