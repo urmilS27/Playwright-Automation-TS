@@ -27,6 +27,7 @@ export class JobFilters {
     this.salaryCheckBox = page.getByLabel('Has interview process');
   }
 
+
   private async selectDropdown(locator: Locator, value: string) {
     await locator.fill(value);
     await this.page.keyboard.press('Enter');
@@ -74,3 +75,8 @@ export class JobFilters {
     await this.salaryCheckBox.check();
   }
 }
+
+
+
+
+// Filters added
