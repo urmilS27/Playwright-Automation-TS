@@ -49,12 +49,3 @@
 //   // page.locator('//div[@class="PlpComponent__base"][2]//div[@role="button"]')
 //   await page.locator('.PlpComponent__base').nth(1).waitFor({ state: 'visible' });
 //   await page.locator('.PlpComponent__base').nth(1).locator('.ProductModule__electronicViewButtonNew4By4').locator('[role="button"]').click();
- 
-//   // page.getByRole('button', { name: 'Close' })
-//   // page.getByLabel('Close')
-//   // page.locator('//button[@aria-label="Close"]')
-//   await page.getByTitle('Close').waitFor({ state: 'visible' });
-//   await page.getByTitle('Close').click();
- 
-// });
- 
