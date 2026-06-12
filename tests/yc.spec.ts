@@ -40,23 +40,18 @@ test('Startup Companies', async ({ page }) => {
 
     await yctest.Baseurl();
     await yctest.userlogin();
-
     await yjob.joblinkpage();
     await page.waitForLoadState('domcontentloaded');
 
     await yjob.clearFilterC();
-
     await yjob.searchComp();
     await page.waitForLoadState('domcontentloaded');
 
     const companyPagePromise = page.waitForEvent('popup');
     await yjob.selectRole.first().click();
-
     const companyPage = await companyPagePromise;
     await companyPage.waitForLoadState('domcontentloaded');
-
     const companyTab = new comapnyCheckout(companyPage);
-
     const jobPagePromise = companyPage.waitForEvent('popup');
     await companyTab.viewRoleDetail.click();
 
