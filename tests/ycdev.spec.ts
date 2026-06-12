@@ -44,6 +44,9 @@ test('Startup Companies', async ({ page }) => {
     await page.waitForLoadState('domcontentloaded');
 
     await yjob.clearFilterC();
+
+    //Adding the 7 filters
+
     await yjob.searchComp();
     await page.waitForLoadState('domcontentloaded');
 
@@ -57,10 +60,9 @@ test('Startup Companies', async ({ page }) => {
 
     const jobPage = await jobPagePromise;
     await jobPage.waitForLoadState('domcontentloaded');
-
     const jobApply = new JobApply(jobPage);
-
     await jobApply.applynow();
     await jobApply.jobDesc();
     await jobApply.close();
+
 })
